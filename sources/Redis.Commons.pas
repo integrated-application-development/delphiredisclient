@@ -318,12 +318,12 @@ end;
 
 function TRedisClientBase.BytesOfUnicode(const AUnicodeString: string): TBytes;
 begin
-  Result := BytesOf(AUnicodeString);
+  Result := TEncoding.UTF8.GetBytes(AUnicodeString);
 end;
 
 function TRedisClientBase.StringOfUnicode(const ABytes: TBytes): string;
 begin
-  Result := StringOf(ABytes);
+  Result := TEncoding.UTF8.GetString(ABytes);
 end;
 
 end.

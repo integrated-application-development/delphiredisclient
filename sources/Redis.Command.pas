@@ -65,7 +65,7 @@ end;
 
 function TRedisCommand.Add(AString: string): IRedisCommand;
 begin
-  FParts.Add(BytesOf(AString));
+  FParts.Add(BytesOfUnicode(AString));
   Result := Self;
 end;
 
